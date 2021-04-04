@@ -1,0 +1,80 @@
+#settingsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+
+.settingContainer {
+  display: flex;
+  place-items: center;
+  font-size: 13vw;
+  width: 95vw;
+  padding: 1vw;
+  background: var(--secondary-bg-color);
+  border-radius: 4vw;
+  text-align: right;
+  margin-bottom: 5vw;
+}
+
+.settingContainer svg {
+  width: 13vw;
+  height: 13vw;
+  fill: var(--main-accent-color);
+}
+
+.settingButton:active {
+  filter: brightness(150%);
+}
+
+.settingText {
+  display: inline-block;
+  padding-left: 5vw;
+}
+
+.settingIcon {
+  display: grid;
+  place-items: center;
+}
+
+#removeBackground svg {
+  fill: var(--secondary-accent-color);
+}
+
+.optionList {
+  display: flex;
+  flex-direction: column;
+}
+
+.listContainer {
+  width: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+}
+
+.listContainer>* {
+  flex-shrink: 0;
+}
+
+.listOption {
+  width: 20vw;
+  height: 20vw;
+  border-radius: 4vw;
+  border: solid var(--main-txt-color) 1vw;
+  margin-right: 4vw;
+  background-image: attr(data-bg);
+  content: attr(data-bg);
+}
+
+.listOption.selected {
+  border: solid var(--main-accent-color) 1vw;
+}
+
+.listTitle {
+  margin-bottom: 4vw;
+}
+
+#disco {}

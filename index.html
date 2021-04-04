@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dequeue</title>
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="apple-touch-icon" href="icons/apple-icon-180.png">
+  <meta name="viewport" content="initial-scale=1,  maximum-scale=1.0, viewport-fit=cover, width=device-width, user-scalable=no">
+  </meta>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  </meta>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  </meta>
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+
+  <link rel="stylesheet" href="css/master.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/actions.css">
+  <link rel="stylesheet" href="css/settings.css">
+  <script src="libraries/body-scroll-lock-master/lib/bodyScrollLock.js"></script>
+  <script type="text/javascript" src="js/Hammer.js" async defer> </script>
+  <script type="text/javascript" src="js/navBar.js" async defer> </script>
+  <script type="text/javascript" src="js/main.js" async defer> </script>
+  <script type="text/javascript" src="js/settings.js" async defer> </script>
+</head>
+
+<body scroll="no">
+  <nav>
+    <div id="background">
+    </div>
+    <div id="navContainer">
+      <div class="navButtonContainer selected" onclick="changeTab(1)">
+        <svg version="1.1" id="homeIcon" class="navIcon " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 330.242 330.242" style="enable-background:new 0 0 330.242 330.242;"
+          xml:space="preserve">
+          <path d="M324.442,129.811l-41.321-33.677V42.275c0-6.065-4.935-11-11-11h-26c-6.065,0-11,4.935-11,11v14.737l-55.213-44.999
+          c-3.994-3.254-9.258-5.047-14.822-5.047c-5.542,0-10.781,1.782-14.753,5.019L5.8,129.81c-6.567,5.351-6.173,10.012-5.354,12.314
+          c0.817,2.297,3.448,6.151,11.884,6.151h19.791v154.947c0,11.058,8.972,20.053,20,20.053h62.5c10.935,0,19.5-8.809,19.5-20.053
+          v-63.541c0-5.446,5.005-10.405,10.5-10.405h42c5.238,0,9.5,4.668,9.5,10.405v63.541c0,10.87,9.388,20.053,20.5,20.053h61.5
+          c11.028,0,20-8.996,20-20.053V148.275h19.791c8.436,0,11.066-3.854,11.884-6.151C330.615,139.822,331.009,135.161,324.442,129.811z" />
+        </svg>
+        <div class="navTitle">Home</div>
+      </div>
+      <div class="navButtonContainer " onclick="changeTab(2)">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+          <g>
+            <path
+              d="m480.6,158.7c11.3,0 20.4-9.1 20.4-20.4v-106.9c0-11.3-9.1-20.4-20.4-20.4h-107.1c-11.3,0-20.4,9.1-20.4,20.4v33h-194.2v-33c0-11.3-9.1-20.4-20.4-20.4h-107.1c-11.3-7.10543e-15-20.4,9.1-20.4,20.4v106.9c0,11.3 9.1,20.4 20.4,20.4h33.1v194.6h-33.1c-11.3,0-20.4,9.1-20.4,20.4v106.9c0,11.3 9.1,20.4 20.4,20.4h107.1c11.3,0 20.4-9.1 20.4-20.4v-33h194.2v33c0,11.3 9.1,20.4 20.4,20.4h107.1c11.3,0 20.4-9.1 20.4-20.4v-106.9c0-11.3-9.1-20.4-20.4-20.4h-33.1v-194.6h33.1zm-86.7-106.9h66.2v66h-66.2v-66zm-342.1,0h66.2v66h-66.2v-66zm66.3,408.4h-66.3v-66h66.2v66zm342.2,0h-66.2v-66h66.2v66zm-53.6-106.9h-33.1c-11.3,0-20.4,9.1-20.4,20.4v33h-194.2v-33c0-11.3-9.1-20.4-20.4-20.4h-33.1v-194.6h33.1c11.3,0 20.4-9.1 20.4-20.4v-33h194.2v33c0,11.3 9.1,20.4 20.4,20.4h33.1v194.6z" />
+          </g>
+        </svg>
+        <div class="navTitle">Actions</div>
+      </div>
+      <div class="navButtonContainer" onclick="changeTab(3)">
+        <svg version="1.1" id="settingsIcon" class="navIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+          <path d="M491.584,192.576l-55.918-6.914c-0.919-2.351-1.884-4.681-2.892-6.991l34.648-44.429
+            c7.227-9.266,6.412-22.464-1.901-30.773l-57.028-56.996c-8.31-8.304-21.501-9.114-30.762-1.891l-44.414,34.633
+            c-2.31-1.01-4.642-1.975-6.994-2.895l-6.915-55.903C317.966,8.755,308.061,0,296.311,0h-80.635
+            c-11.748,0-21.655,8.758-23.097,20.416l-6.912,55.904c-2.351,0.92-4.682,1.884-6.988,2.892l-44.417-34.641
+            c-9.266-7.225-22.46-6.414-30.768,1.893l-57.021,57.009c-8.308,8.307-9.123,21.506-1.896,30.771l34.644,44.417
+            c-1.01,2.312-1.977,4.647-2.898,7.002l-55.906,6.915C8.757,194.02,0,203.925,0,215.675v80.64c0,11.751,8.758,21.658,20.421,23.099
+            l55.9,6.901c0.92,2.354,1.885,4.686,2.894,6.994l-34.639,44.42c-7.224,9.264-6.412,22.46,1.894,30.766l57.021,57.031
+            c8.307,8.308,21.507,9.123,30.771,1.896l44.418-34.648c2.306,1.007,4.636,1.972,6.985,2.889l6.914,55.921
+            C194.02,503.245,203.926,512,215.676,512h80.637c11.748,0,21.654-8.755,23.097-20.415l6.915-55.921
+            c2.352-0.919,4.684-1.884,6.993-2.892l44.424,34.65c9.269,7.227,22.463,6.412,30.773-1.897l57.015-57.031
+            c8.305-8.307,9.117-21.504,1.891-30.767l-34.639-44.409c1.01-2.313,1.977-4.648,2.897-7.004l55.9-6.903
+            C503.242,317.971,512,308.066,512,296.313v-80.64C512,203.925,503.243,194.019,491.584,192.576z M255.997,310.301
+            c-29.941,0-54.3-24.354-54.3-54.294c0-29.946,24.359-54.309,54.3-54.309c29.944,0,54.306,24.363,54.306,54.309
+            C310.303,285.947,285.941,310.301,255.997,310.301z" />
+        </svg>
+        <div class="navTitle">Settings</div>
+      </div>
+    </div>
+  </nav>
+  <div id="rightSwipeDetection"></div>
+  <div id="leftSwipeDetection"></div>
+  <div id="pageBody" class="notransition">
+    <div class="tabContainer" id="home">
+      <div id="homeList">
+        <div class="homeItemContainer">
+          <div class="homeItemIcon">
+            <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M 4 5 L 4 27 L 28 27 L 28 5 Z M 6 7 L 26 7 L 26 9 L 6 9 Z M 6 11 L 26 11 L 26 25 L 6 25 Z M 11.21875 13.78125 L 9.78125 15.21875 L 12.5625 18 L 9.78125 20.78125 L 11.21875 22.21875 L 14.71875 18.71875 L 15.40625 18 L 14.71875 17.28125 Z M 16 20 L 16 22 L 22 22 L 22 20 Z" />
+            </svg>
+          </div>
+          <div class="homeItemTitle">Terminal</div>
+        </div>
+        <div class="widgetContainer">
+          <div class="widgetHeader">
+            <div class="homeItemIcon">
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="46.334px" height="46.334px" viewBox="0 0 46.334 46.334" style="enable-background:new 0 0 46.334 46.334;"
+                xml:space="preserve">
+                <g>
+                  <g>
+                    <path d="M36.667,20.198c-5.331,0-9.667,4.337-9.667,9.667s4.336,9.666,9.667,9.666s9.667-4.336,9.667-9.666
+            			c0-1.664-0.423-3.232-1.167-4.602V2.532c0-0.688-0.288-1.342-0.789-1.791c-0.5-0.451-1.181-0.665-1.868-0.592L18.5,2.765
+            			c-1.308,0.142-2.333,1.283-2.333,2.6v24.032c-1.719-1.566-3.996-2.531-6.5-2.531C4.336,26.865,0,31.201,0,36.531
+            			s4.336,9.668,9.667,9.668s9.667-4.338,9.667-9.668c0-0.746-0.093-1.469-0.254-2.166h0.087V5.711l23-2.506v18.72
+            			C40.604,20.84,38.71,20.198,36.667,20.198z M9.667,43.199C5.991,43.199,3,40.207,3,36.531s2.991-6.666,6.667-6.666
+            			s6.667,2.99,6.667,6.666S13.344,43.199,9.667,43.199z M36.667,36.531c-3.676,0-6.667-2.99-6.667-6.666s2.991-6.668,6.667-6.668
+            			s6.667,2.992,6.667,6.668S40.344,36.531,36.667,36.531z" />
+                  </g>
+                </g>
+              </svg>
+
+
+            </div>
+            <div class="homeItemTitle">Now Playing</div>
+          </div>
+          <div class="widgetBody" id="musicWidget">
+            <div id="widgetAlbumArtwork">
+              <img src="images/okOrchestra.jpg" alt="Album Artwork">
+            </div>
+            <div id="songInfo">
+              <div id="songTitle">Joe</div>
+              <div id="songDetails">Ok Orchestra - Ajr</div>
+            </div>
+            <div id="musicControls">
+              <div id="back" class="musicControl">
+                <svg width="100px" height="100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                  <!-- Generated by Pixelmator Pro 2.0.6 -->
+
+                  <path id="Triangle-copy" d="M-0 48.571 C-0 48.571 69 88 69 88 69 88 69 9.143 69 9.143 69 9.143 -0 48.571 -0 48.571 Z" />
+                  <path id="Triangle-copy-1" d="M31 48.571 C31 48.571 100 88 100 88 100 88 100 9.143 100 9.143 100 9.143 31 48.571 31 48.571 Z" />
+
+                </svg>
+
+              </div>
+              <div id="playPause" class="musicControl">
+                <svg width="100px" height="100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                  <path id="Triangle" d="M94.5 50 C94.5 50 7 100 7 100 7 100 7 0 7 0 7 0 94.5 50 94.5 50 Z" />
+                </svg>
+              </div>
+              <div id="forward" class="musicControl">
+                <svg width="100px" height="100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                  <!-- Generated by Pixelmator Pro 2.0.6 -->
+                  <path id="Triangle-copy" d="M100 48.571 C100 48.571 31 88 31 88 31 88 31 9.143 31 9.143 31 9.143 100 48.571 100 48.571 Z" />
+                  <path id="Triangle-copy-1" d="M69 48.571 C69 48.571 -0 88 -0 88 -0 88 -0 9.143 -0 9.143 -0 9.143 69 48.571 69 48.571 Z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tabContainer" id="actions">
+      <div id="actionsList">
+        <div class="actionButton">
+          test
+        </div>
+        <div class="actionButton">
+          test 2
+        </div>
+        <div class="actionButton" id="addActionButton" onclick="activatePopupWindow()">
+          +
+        </div>
+      </div>
+    </div>
+    <div class="tabContainer" id="setitngs">
+      <div id="settingsList">
+        <div class="settingContainer settingButton" onclick="location.reload(true);">
+          <div class="settingIcon settingButton">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 487.23 487.23" style="enable-background:new 0 0 487.23 487.23;" xml:space="preserve">
+              <g>
+                <g>
+                  <path d="M55.323,203.641c15.664,0,29.813-9.405,35.872-23.854c25.017-59.604,83.842-101.61,152.42-101.61
+            			c37.797,0,72.449,12.955,100.23,34.442l-21.775,3.371c-7.438,1.153-13.224,7.054-14.232,14.512
+            			c-1.01,7.454,3.008,14.686,9.867,17.768l119.746,53.872c5.249,2.357,11.33,1.904,16.168-1.205
+            			c4.83-3.114,7.764-8.458,7.796-14.208l0.621-131.943c0.042-7.506-4.851-14.144-12.024-16.332
+            			c-7.185-2.188-14.947,0.589-19.104,6.837l-16.505,24.805C370.398,26.778,310.1,0,243.615,0C142.806,0,56.133,61.562,19.167,149.06
+            			c-5.134,12.128-3.84,26.015,3.429,36.987C29.865,197.023,42.152,203.641,55.323,203.641z" />
+                  <path d="M464.635,301.184c-7.27-10.977-19.558-17.594-32.728-17.594c-15.664,0-29.813,9.405-35.872,23.854
+            			c-25.018,59.604-83.843,101.61-152.42,101.61c-37.798,0-72.45-12.955-100.232-34.442l21.776-3.369
+            			c7.437-1.153,13.223-7.055,14.233-14.514c1.009-7.453-3.008-14.686-9.867-17.768L49.779,285.089
+            			c-5.25-2.356-11.33-1.905-16.169,1.205c-4.829,3.114-7.764,8.458-7.795,14.207l-0.622,131.943
+            			c-0.042,7.506,4.85,14.144,12.024,16.332c7.185,2.188,14.948-0.59,19.104-6.839l16.505-24.805
+            			c44.004,43.32,104.303,70.098,170.788,70.098c100.811,0,187.481-61.561,224.446-149.059
+            			C473.197,326.043,471.903,312.157,464.635,301.184z" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="settingText">Refresh</div>
+        </div>
+        <div class="settingContainer optionList">
+          <div class="listTitle">Backgrounds</div>
+          <div class="listContainer">
+            <div class="listOption" data-bg="linear-gradient(DEG, #4158D0 0%, #000 50%, #de3c7b 100%)" style="background-image:linear-gradient(45deg, #4158D0 0%, #000 50%, #de3c7b 100%)" onclick="setPresetBackground(this)"></div>
+            <div class="listOption" data-bg="linear-gradient( DEG,  rgba(73,93,109,1) 4.3%, rgba(49,55,82,1) 96.7% )" style="background-image: linear-gradient( 110.3deg,  rgba(73,93,109,1) 4.3%, rgba(49,55,82,1) 96.7% );"
+              onclick="setPresetBackground(this)"></div>
+            <div class="listOption" data-bg="linear-gradient( DEG,  rgba(129,252,255,1) 0.4%, rgba(255,175,207,1) 49.8%, rgba(255,208,153,1) 98.6% )"
+              style="background-image: linear-gradient( 76.5deg,  rgba(129,252,255,1) 0.4%, rgba(255,175,207,1) 49.8%, rgba(255,208,153,1) 98.6% );" onclick="setPresetBackground(this)"></div>
+            <div class="listOption" data-bg="linear-gradient( DEG,  rgba(14,11,56,1) 11.2%, rgba(239,37,37,1) 91.1% )" style="background-image: linear-gradient( 109.6deg,  rgba(14,11,56,1) 11.2%, rgba(239,37,37,1) 91.1% )"
+              onclick="setPresetBackground(this)"></div>
+            <div class="listOption" data-bg="linear-gradient(DEG, #4158D0 0%, #000 50%, #de3c7b 100%)" style="background-image:linear-gradient(45deg, #4158D0 0%, #000 50%, #de3c7b 100%)" onclick="setPresetBackground(this)"></div>
+
+          </div>
+        </div>
+        <div class="settingContainer settingButton" id="removeBackground" onclick="removeBackground();">
+          <div class="settingIcon">
+            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 11C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H8Z" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12ZM21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" />
+            </svg>
+
+          </div>
+          <div class="settingText">Remove Background</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="popUpPage">
+    <div id="popUpHeader">
+      <div id="popUpGrabber"></div>
+    </div>
+    <div id="popUpBodyContainer">
+      <div class="popUpBody" id="addActionPopup">
+        <div class="widgetContainer" id="actionName">
+          <div class="widgetHeader">
+            <div class="widgetTitle">Action Name</div>
+          </div>
+          <div class="widgetBody">
+            <input type="text" name="" placeholder="New Action">
+          </div>
+        </div>
+        <div class="widgetContainer" id="actionName">
+          <div class="widgetHeader">
+            <div class="widgetTitle">Script Name</div>
+          </div>
+          <div class="widgetBody">
+            <input type="text" name="" placeholder="New Script">
+          </div>
+        </div>
+        <div class="widgetContainer" id="actionName">
+          <div class="widgetHeader">
+            <div class="widgetTitle">Color</div>
+            <input type="color" name="" placeholder="New Script">
+          </div>
+          <div class="widgetBody">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    try {
+      navigator.serviceWorker.register('service-worker.js')
+    } catch (e) {
+      console.log("Service worker registration failed")
+    }
+  }
+</script>
+
+</html>

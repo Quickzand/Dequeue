@@ -1,0 +1,55 @@
+#actionsList {
+  display: grid;
+  grid-template-columns: repeat(2, 45vw);
+  grid-template-rows: 30vw;
+  grid-row-gap: 5vw;
+  grid-column-gap: 5vw;
+  grid-auto-flow: row;
+}
+
+.actionButton {
+  width: 45vw;
+  height: 30vw;
+  padding: 2vw;
+  border-radius: 5vw;
+  background: green;
+  font-size: 5vw;
+  display: grid;
+  place-items: center;
+}
+
+.actionButton:active {
+  filter: brightness(50%);
+}
+
+#addActionButton {
+  background: transparent;
+  border: solid var(--main-txt-color) 1vw;
+  font-size: 20vw;
+}
+
+#addActionPopup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#addActionPopup input[type="text"] {
+  background: var(--inset-bg-color);
+  border: none;
+  color: var(--main-txt-color);
+  width: 95%;
+  height: 15vw;
+  font-size: 10vw;
+}
+
+#addActionPopup input[type="color"] {
+  width: 15vw;
+  height: 15vw;
+  float: left;
+}
+
+#addActionPopup .widgetBody {
+  display: grid;
+  place-items: center;
+}
