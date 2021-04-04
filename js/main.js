@@ -12,12 +12,14 @@ function getSettingsData() {
 
 
 function activatePopupWindow() {
-  document.getElementById('popUpPage').classList.add("active");
-
+  $('#popUpPage').addClass("active");
+  $("#pageBlackout").addClass("active")
 }
 
 function deactivatePopupWindow() {
-  document.getElementById('popUpPage').classList.remove("active");
+  $('#popUpPage').removeClass("active");
+  $("#pageBlackout").removeClass("active")
+
 }
 
 var rightGestureListener;

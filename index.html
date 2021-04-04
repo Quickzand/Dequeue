@@ -45,7 +45,8 @@
   <link rel="stylesheet" href="css/actions.css">
   <link rel="stylesheet" href="css/settings.css">
   <script src="libraries/body-scroll-lock-master/lib/bodyScrollLock.js"></script>
-  <script type="text/javascript" src="js/Hammer.js" async defer> </script>
+  <script src="libraries/jQuery.js"></script>
+  <script type="text/javascript" src="js/Hammer.js"> </script>
   <script type="text/javascript" src="js/navBar.js" async defer> </script>
   <script type="text/javascript" src="js/main.js" async defer> </script>
   <script type="text/javascript" src="js/settings.js" async defer> </script>
@@ -236,6 +237,7 @@
       </div>
     </div>
   </div>
+  <div id="pageBlackout" onclick="deactivatePopupWindow()"></div>
   <div id="popUpPage">
     <div id="popUpHeader">
       <div id="popUpGrabber"></div>

@@ -210,3 +210,17 @@ nav {
   text-align: center;
   width: 100%;
 }
+
+#pageBlackout {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+}
+
+#pageBlackout.active {
+  visibility: visible !important;
+}
