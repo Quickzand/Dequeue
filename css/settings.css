@@ -77,4 +77,23 @@
   margin-bottom: 4vw;
 }
 
-#disco {}
+.textSetting {
+  display: flex;
+  flex-direction: column;
+}
+
+.textContainer {
+  display: grid;
+  place-items: center;
+}
+
+.textSetting input {
+  width: 80%;
+  color: var(--main-txt-color);
+  height: 15vw;
+  font-size: 13vw;
+  text-align: center;
+  border: none;
+  background: black;
+  margin-bottom: 5vw;
+}

@@ -60,5 +60,10 @@ function loadSavedActions() {
   })
 }
 
+
+function runAction(scriptName) {
+  console.log("Running script " + scriptName + "...")
+}
+
 clearNewActionInputs();
 loadSavedActions();
