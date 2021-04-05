@@ -14,12 +14,14 @@ function getSettingsData() {
 function activatePopupWindow() {
   $('#popUpPage').addClass("active");
   $("#pageBlackout").addClass("active")
+  bodyScrollLock.disableBodyScroll(document.getElementsByClassName("scrollable"));
 }
 
 function deactivatePopupWindow() {
   $('#popUpPage').removeClass("active");
   $("#pageBlackout").removeClass("active")
-
+  // bodyScrollLock.enableBodyScroll(document.body);
+  // bodyScrollLock.clearAllBodyScrollLocks();
 }
 
 var rightGestureListener;
@@ -51,6 +53,4 @@ setTimeout(function() {
   })
 }, 200)
 
-
-
-bodyScrollLock.disableBodyScroll(document.body);
+bodyScrollLock.disableBodyScroll(document.getElementsByClassName("scrollable"));

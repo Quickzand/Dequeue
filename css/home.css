@@ -148,3 +148,7 @@
   width: 10vw;
   height: 10vw;
 }
+
+.scrollable {
+  -webkit-overflow-scrolling: touch;
+}
