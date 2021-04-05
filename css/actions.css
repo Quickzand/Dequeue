@@ -53,3 +53,15 @@
   display: grid;
   place-items: center;
 }
+
+#submitNewActionButton {
+  width: 64vw;
+  height: 29vw;
+  background: #108040;
+  display: grid;
+  place-items: center;
+  font-size: 15vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}

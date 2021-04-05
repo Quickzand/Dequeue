@@ -52,6 +52,8 @@
   <script type="text/javascript" src="js/navBar.js" async defer> </script>
   <script type="text/javascript" src="js/main.js" async defer> </script>
   <script type="text/javascript" src="js/settings.js" async defer> </script>
+  <script type="text/javascript" src="js/actions.js" async defer> </script>
+
 </head>
 
 <body scroll="no">
@@ -174,12 +176,6 @@
     </div>
     <div class="tabContainer" id="actions">
       <div id="actionsList">
-        <div class="actionButton">
-          test
-        </div>
-        <div class="actionButton">
-          test 2
-        </div>
         <div class="actionButton" id="addActionButton" onclick="activatePopupWindow()">
           +
         </div>
@@ -251,26 +247,27 @@
             <div class="widgetTitle">Action Name</div>
           </div>
           <div class="widgetBody">
-            <input type="text" name="" placeholder="New Action">
+            <input type="text" name="actionName" placeholder="New Action">
           </div>
         </div>
-        <div class="widgetContainer" id="actionName">
+        <div class="widgetContainer" id="scriptName">
           <div class="widgetHeader">
             <div class="widgetTitle">Script Name</div>
           </div>
           <div class="widgetBody">
-            <input type="text" name="" placeholder="New Script">
+            <input type="text" name="scriptName" placeholder="New Script">
           </div>
         </div>
-        <div class="widgetContainer" id="actionName">
+        <div class="widgetContainer" id="actionColor">
           <div class="widgetHeader">
             <div class="widgetTitle">Color</div>
-            <input type="color" name="" placeholder="New Script">
+            <input type="color" name="actionColor">
           </div>
           <div class="widgetBody">
 
           </div>
         </div>
+        <div id="submitNewActionButton" onclick="createNewAction()"> Submit </div>
       </div>
     </div>
   </div>
