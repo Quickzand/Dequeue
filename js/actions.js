@@ -43,12 +43,19 @@ function saveAction(action) {
 }
 
 function addActionToPage(action) {
+  var colorTemp = hexToRgb(action.actionColor);
+  var bgColor = "rgba(" + colorTemp.r + "," + colorTemp.g + "," + colorTemp.b + ", 0.25)"
   var addActionButton = $("#addActionButton");
   var temp = $("<div></div>");
-  temp.text(action.actionName);
-  temp.css("background-color", action.actionColor);
   temp.addClass("actionButton");
   temp.attr("data-scriptName", action.scriptName)
+  temp.css("background-color", bgColor);
+  var tempBg = $("<div></div>");
+  tempBg.addClass("actionButtonBg")
+  var tempText = $("<div></div>");
+  tempText.text(action.actionName);
+  temp.append(tempBg);
+  temp.prepend(tempText)
   temp.insertBefore(addActionButton)
 }
 
@@ -63,6 +70,15 @@ function loadSavedActions() {
 
 function runAction(scriptName) {
   console.log("Running script " + scriptName + "...")
+}
+
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
 }
 
 clearNewActionInputs();

@@ -107,18 +107,20 @@
   <div id="pageBody" class="notransition">
     <div class="tabContainer" id="home">
       <div id="homeList">
-        <div class="homeItemContainer">
-          <div class="homeItemIcon">
-            <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M 4 5 L 4 27 L 28 27 L 28 5 Z M 6 7 L 26 7 L 26 9 L 6 9 Z M 6 11 L 26 11 L 26 25 L 6 25 Z M 11.21875 13.78125 L 9.78125 15.21875 L 12.5625 18 L 9.78125 20.78125 L 11.21875 22.21875 L 14.71875 18.71875 L 15.40625 18 L 14.71875 17.28125 Z M 16 20 L 16 22 L 22 22 L 22 20 Z" />
-            </svg>
-          </div>
-          <div class="homeItemTitle">Terminal</div>
-        </div>
-        <div class="widgetContainer">
+        <div class="widget button">
           <div class="widgetHeader">
-            <div class="homeItemIcon">
+            <div class="widgetIcon">
+              <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M 4 5 L 4 27 L 28 27 L 28 5 Z M 6 7 L 26 7 L 26 9 L 6 9 Z M 6 11 L 26 11 L 26 25 L 6 25 Z M 11.21875 13.78125 L 9.78125 15.21875 L 12.5625 18 L 9.78125 20.78125 L 11.21875 22.21875 L 14.71875 18.71875 L 15.40625 18 L 14.71875 17.28125 Z M 16 20 L 16 22 L 22 22 L 22 20 Z" />
+              </svg>
+            </div>
+            <div class="widgetTitle">Terminal</div>
+          </div>
+        </div>
+        <div class="widget">
+          <div class="widgetHeader">
+            <div class="widgetIcon">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="46.334px" height="46.334px" viewBox="0 0 46.334 46.334" style="enable-background:new 0 0 46.334 46.334;"
                 xml:space="preserve">
                 <g>
@@ -183,63 +185,40 @@
     </div>
     <div class="tabContainer" id="setitngs">
       <div id="settingsList">
-        <div class="settingContainer settingButton" onclick="location.reload(true);">
-          <div class="settingIcon settingButton">
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 487.23 487.23" style="enable-background:new 0 0 487.23 487.23;" xml:space="preserve">
-              <g>
+        <div class="widget button" onclick="location.reload(true);">
+          <div class="widgetHeader">
+            <div class="widgetIcon">
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 487.23 487.23" style="enable-background:new 0 0 487.23 487.23;" xml:space="preserve">
                 <g>
-                  <path d="M55.323,203.641c15.664,0,29.813-9.405,35.872-23.854c25.017-59.604,83.842-101.61,152.42-101.61
+                  <g>
+                    <path d="M55.323,203.641c15.664,0,29.813-9.405,35.872-23.854c25.017-59.604,83.842-101.61,152.42-101.61
             			c37.797,0,72.449,12.955,100.23,34.442l-21.775,3.371c-7.438,1.153-13.224,7.054-14.232,14.512
             			c-1.01,7.454,3.008,14.686,9.867,17.768l119.746,53.872c5.249,2.357,11.33,1.904,16.168-1.205
             			c4.83-3.114,7.764-8.458,7.796-14.208l0.621-131.943c0.042-7.506-4.851-14.144-12.024-16.332
             			c-7.185-2.188-14.947,0.589-19.104,6.837l-16.505,24.805C370.398,26.778,310.1,0,243.615,0C142.806,0,56.133,61.562,19.167,149.06
             			c-5.134,12.128-3.84,26.015,3.429,36.987C29.865,197.023,42.152,203.641,55.323,203.641z" />
-                  <path d="M464.635,301.184c-7.27-10.977-19.558-17.594-32.728-17.594c-15.664,0-29.813,9.405-35.872,23.854
+                    <path d="M464.635,301.184c-7.27-10.977-19.558-17.594-32.728-17.594c-15.664,0-29.813,9.405-35.872,23.854
             			c-25.018,59.604-83.843,101.61-152.42,101.61c-37.798,0-72.45-12.955-100.232-34.442l21.776-3.369
             			c7.437-1.153,13.223-7.055,14.233-14.514c1.009-7.453-3.008-14.686-9.867-17.768L49.779,285.089
             			c-5.25-2.356-11.33-1.905-16.169,1.205c-4.829,3.114-7.764,8.458-7.795,14.207l-0.622,131.943
             			c-0.042,7.506,4.85,14.144,12.024,16.332c7.185,2.188,14.948-0.59,19.104-6.839l16.505-24.805
             			c44.004,43.32,104.303,70.098,170.788,70.098c100.811,0,187.481-61.561,224.446-149.059
             			C473.197,326.043,471.903,312.157,464.635,301.184z" />
+                  </g>
                 </g>
-              </g>
-            </svg>
+              </svg>
+            </div>
+            <div class="widgetTitle">Refresh</div>
           </div>
-          <div class="settingText">Refresh</div>
         </div>
-        <div class="settingContainer textSetting">
-          <div class="textTitle">Computer Key</div>
-          <div class="textContainer">
+        <div class="widget textInput">
+          <div class="widgetHeader">
+            <div class="widgetTitle">Computer Key</div>
+          </div>
+          <div class="widgetBody">
             <input type="text" name="" placeholder="1111">
           </div>
         </div>
-        <div class="settingContainer optionList">
-          <div class="listTitle">Backgrounds</div>
-          <div class="listContainer scrollable" id="testies">
-            <div class="listOption" data-bg="linear-gradient(DEG, #4158D0 0%, #000 50%, #de3c7b 100%)" style="background-image:linear-gradient(45deg, #4158D0 0%, #000 50%, #de3c7b 100%)" onclick="setPresetBackground(this)"></div>
-            <div class="listOption" data-bg="linear-gradient( DEG,  rgba(73,93,109,1) 4.3%, rgba(49,55,82,1) 96.7% )" style="background-image: linear-gradient( 110.3deg,  rgba(73,93,109,1) 4.3%, rgba(49,55,82,1) 96.7% );"
-              onclick="setPresetBackground(this)"></div>
-            <div class="listOption" data-bg="linear-gradient( DEG,  rgba(129,252,255,1) 0.4%, rgba(255,175,207,1) 49.8%, rgba(255,208,153,1) 98.6% )"
-              style="background-image: linear-gradient( 76.5deg,  rgba(129,252,255,1) 0.4%, rgba(255,175,207,1) 49.8%, rgba(255,208,153,1) 98.6% );" onclick="setPresetBackground(this)"></div>
-            <div class="listOption" data-bg="linear-gradient( DEG,  rgba(14,11,56,1) 11.2%, rgba(239,37,37,1) 91.1% )" style="background-image: linear-gradient( 109.6deg,  rgba(14,11,56,1) 11.2%, rgba(239,37,37,1) 91.1% )"
-              onclick="setPresetBackground(this)"></div>
-            <div class="listOption" data-bg="linear-gradient(DEG, #4158D0 0%, #000 50%, #de3c7b 100%)" style="background-image:linear-gradient(45deg, #4158D0 0%, #000 50%, #de3c7b 100%)" onclick="setPresetBackground(this)"></div>
-
-          </div>
-        </div>
-        <div class="settingContainer settingButton" id="removeBackground" onclick="removeBackground();">
-          <div class="settingIcon">
-            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 11C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H8Z" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12ZM21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" />
-            </svg>
-
-          </div>
-          <div class="settingText">Remove Background</div>
-        </div>
-
-
       </div>
     </div>
   </div>
@@ -250,7 +229,7 @@
     </div>
     <div id="popUpBodyContainer">
       <div class="popUpBody" id="addActionPopup">
-        <div class="widgetContainer" id="actionName">
+        <div class="widget" id="actionName">
           <div class="widgetHeader">
             <div class="widgetTitle">Action Name</div>
           </div>
@@ -258,7 +237,7 @@
             <input type="text" name="actionName" placeholder="New Action">
           </div>
         </div>
-        <div class="widgetContainer" id="scriptName">
+        <div class="widget" id="scriptName">
           <div class="widgetHeader">
             <div class="widgetTitle">Script Name</div>
           </div>
@@ -266,7 +245,7 @@
             <input type="text" name="scriptName" placeholder="New Script">
           </div>
         </div>
-        <div class="widgetContainer" id="actionColor">
+        <div class="widget" id="actionColor">
           <div class="widgetHeader">
             <div class="widgetTitle">Color</div>
             <input type="color" name="actionColor">

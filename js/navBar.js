@@ -12,9 +12,7 @@ function changeTab(changeTo) {
   updateTabData({
     location: changeTo
   });
-  setTimeout(function() {
-    setBgRotation(currentTab * 35, getBackgroundData().fileURL);
-  }, 30)
+
 }
 
 
