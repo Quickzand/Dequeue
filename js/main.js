@@ -46,11 +46,13 @@ setTimeout(function() {
   })
 
 
-  popupWindowGestureListener.on('pan', function(ev) {
+  popupWindowGestureListener.
+
+  on('pan', function(ev) {
     if (ev.direction == Hammer.DIRECTION_DOWN) {
       deactivatePopupWindow();
     }
   })
 }, 200)
 
-bodyScrollLock.disableBodyScroll(document.getElementsByClassName("scrollable"));
+// bodyScrollLock.disableBodyScroll(document.getElementsByClassName("scrollable"));
