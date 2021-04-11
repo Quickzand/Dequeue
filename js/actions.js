@@ -50,6 +50,8 @@ function addActionToPage(action) {
   temp.addClass("actionButton");
   temp.attr("data-scriptName", action.scriptName)
   temp.css("background-color", bgColor);
+  $("#newestAction").removeAttr("id")
+  temp.attr("id", "newestAction")
   var tempBg = $("<div></div>");
   tempBg.addClass("actionButtonBg")
   var tempText = $("<div></div>");
@@ -57,6 +59,13 @@ function addActionToPage(action) {
   temp.append(tempBg);
   temp.prepend(tempText)
   temp.insertBefore(addActionButton)
+  var mc = new Hammer.Manager(document.getElementById("newestAction"));
+  mc.add(new Hammer.Press({
+    time: 750
+  }))
+  mc.on('press', function(ev) {
+    enterEditMode();
+  })
 }
 
 
@@ -80,6 +89,12 @@ function hexToRgb(hex) {
     b: parseInt(result[3], 16)
   } : null;
 }
+
+function enterEditMode() {
+  $(".actionButton").addClass("editMode");
+}
+
+
 
 clearNewActionInputs();
 loadSavedActions();

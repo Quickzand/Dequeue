@@ -24,6 +24,19 @@ function deactivatePopupWindow() {
   // bodyScrollLock.clearAllBodyScrollLocks();
 }
 
+function checkKey(key) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      // Typical action to be performed when the document is ready:
+      if (xhttp.responseText == "API key does not exist!") return false;
+      return true;
+    }
+  };
+  xhttp.open("GET", "https://itsokayboomer.com/dequeue/dequeue.php?api=" + key, true);
+  xhttp.send();
+}
+
 var rightGestureListener;
 var leftGestureListener;
 var popupWindowGestureListener;
@@ -46,9 +59,7 @@ setTimeout(function() {
   })
 
 
-  popupWindowGestureListener.
-
-  on('pan', function(ev) {
+  popupWindowGestureListener.on('pan', function(ev) {
     if (ev.direction == Hammer.DIRECTION_DOWN) {
       deactivatePopupWindow();
     }
