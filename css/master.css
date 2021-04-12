@@ -12,7 +12,7 @@
 }
 
 html {
-  overflow: hidden;
+  /* overflow: visible; */
   /* min-height: calc(100% + env(safe-area-inset-top)); */
   /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); */
   background-attachment: fixed;
@@ -38,6 +38,7 @@ body {
 }
 
 #realBody {
+  overflow: visible;
   background-size: 100vw 100vh;
   width: 100%;
   position: fixed;

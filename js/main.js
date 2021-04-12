@@ -24,18 +24,22 @@ function deactivatePopupWindow() {
   // bodyScrollLock.clearAllBodyScrollLocks();
 }
 
-function checkKey(key) {
+async function checkKey(key) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       // Typical action to be performed when the document is ready:
-      if (xhttp.responseText == "API key does not exist!") return false;
-      return true;
+      if (xhttp.responseText == "API key does not exist!") console.log(false);
+      console.log(true);
     }
   };
-  xhttp.open("GET", "https://itsokayboomer.com/dequeue/dequeue.php?api=" + key, true);
+  xhttp.open("GET", "https://itsokayboomer.com/dequeue/dequeue.php?api=" + key);
   xhttp.send();
 }
+
+
+
+
 
 var rightGestureListener;
 var leftGestureListener;
@@ -67,3 +71,8 @@ setTimeout(function() {
 }, 200)
 
 // bodyScrollLock.disableBodyScroll(document.getElementsByClassName("scrollable"));
+
+
+// checkKey("beaned").then(res => {
+//   console.log(res)
+// })

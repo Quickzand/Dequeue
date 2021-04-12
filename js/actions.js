@@ -1,3 +1,17 @@
+$.fn.extend({
+  disableSelection: function() {
+    this.each(function() {
+      this.onselectstart = function() {
+        return false;
+      };
+      this.unselectable = "on";
+      $(this).css('-moz-user-select', 'none');
+      $(this).css('-webkit-user-select', 'none');
+    });
+    return this;
+  }
+});
+
 function createNewAction() {
   var actionName = $("input[name='actionName']").val();
   var scriptName = $("input[name='scriptName']").val();
@@ -42,7 +56,22 @@ function saveAction(action) {
   }))
 }
 
+
+function removeAction(actionName) {
+  var actions = getActions();
+  for (var i in actions) {
+    if (actions[i].actionName == actionName) {
+      actions.splice(i, 1);
+    }
+  }
+  localStorage.setItem('actions', JSON.stringify({
+    actions
+  }))
+
+}
+
 function addActionToPage(action) {
+  //Creation of the action button DOM element
   var colorTemp = hexToRgb(action.actionColor);
   var bgColor = "rgba(" + colorTemp.r + "," + colorTemp.g + "," + colorTemp.b + ", 0.25)"
   var addActionButton = $("#addActionButton");
@@ -59,6 +88,12 @@ function addActionToPage(action) {
   temp.append(tempBg);
   temp.prepend(tempText)
   temp.insertBefore(addActionButton)
+  temp.click(function() {
+    actionHandler(temp);
+  })
+  temp.disableSelection();
+  //Detection of hold press on the element
+  temp.data("actionName", action.actionName)
   var mc = new Hammer.Manager(document.getElementById("newestAction"));
   mc.add(new Hammer.Press({
     time: 750
@@ -76,9 +111,38 @@ function loadSavedActions() {
   })
 }
 
+function actionHandler(actionElement) {
+  // Deletes element if in edit mode
+  if (actionElement.hasClass("editMode")) {
+    if (confirm('Are you sure you want to delete "' + actionElement.data("actionName") + '"?')) {
+      removeAction(actionElement.data("actionName"));
+      actionElement.remove()
+    }
+  } else {
+
+  }
+}
+
 
 function runAction(scriptName) {
+  var key = "beaned"
   console.log("Running script " + scriptName + "...")
+  var xhttp = new XMLHttpRequest();
+  var contents = {
+    "api": key,
+    "contents": {
+      "command": "run " + scriptName
+    }
+  }
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      // Typical action to be performed when the document is ready:
+      console.log(xhttp.responseText)
+    }
+  };
+  xhttp.open("POST", "https://itsokayboomer.com/dequeue/dequeue.php", true);
+  xhttp.setRequestHeader('Content-Type', 'json');
+  xhttp.send(JSON.stringify(contents));
 }
 
 function hexToRgb(hex) {
@@ -94,7 +158,14 @@ function enterEditMode() {
   $(".actionButton").addClass("editMode");
 }
 
+function exitEditMode() {
+  $(".actionButton").removeClass("editMode");
+}
+
 
 
 clearNewActionInputs();
 loadSavedActions();
+
+
+// runAction("touch beaned.txt")
