@@ -94,6 +94,8 @@ function addActionToPage(action) {
   temp.disableSelection();
   //Detection of hold press on the element
   temp.data("actionName", action.actionName)
+  temp.data("scriptName", action.scriptName)
+
   var mc = new Hammer.Manager(document.getElementById("newestAction"));
   mc.add(new Hammer.Press({
     time: 750
@@ -119,7 +121,7 @@ function actionHandler(actionElement) {
       actionElement.remove()
     }
   } else {
-
+    runAction(actionElement.data("scriptName"))
   }
 }
 
@@ -128,6 +130,9 @@ function runAction(scriptName) {
   var key = "beaned"
   console.log("Running script " + scriptName + "...")
   var xhttp = new XMLHttpRequest();
+  var temp = {
+    "command": "run " + scriptName
+  }
   var contents = {
     "api": key,
     "contents": {
@@ -141,8 +146,9 @@ function runAction(scriptName) {
     }
   };
   xhttp.open("POST", "https://itsokayboomer.com/dequeue/dequeue.php", true);
-  xhttp.setRequestHeader('Content-Type', 'json');
-  xhttp.send(JSON.stringify(contents));
+  // xhttp.setRequestHeader('Content-Type', 'json');
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("api=" + key + "&contents=" + JSON.stringify(temp));
 }
 
 function hexToRgb(hex) {
@@ -169,4 +175,4 @@ clearNewActionInputs();
 loadSavedActions();
 
 
-// runAction("touch beaned.txt")
+// runAction("touch children.txt")

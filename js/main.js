@@ -1,8 +1,8 @@
-function activatePopupWindow() {
-  $('#popUpPage').addClass("active");
-  $("#pageBlackout").addClass("active")
-  bodyScrollLock.disableBodyScroll(document.getElementsByClassName("scrollable"));
-}
+// function activatePopupWindow() {
+//   $('#popUpPage').addClass("active");
+//   $("#pageBlackout").addClass("active")
+//   bodyScrollLock.disableBodyScroll(document.getElementsByClassName("scrollable"));
+// }
 
 function deactivatePopupWindow() {
   $('#popUpPage').removeClass("active");

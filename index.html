@@ -107,7 +107,7 @@
     <div id="rightSwipeDetection"></div>
     <div id="leftSwipeDetection"></div>
     <div id="pageBody" class="notransition">
-      <div class="tabContainer" id="home">
+      <div class="tabContainer scrollable" id="home">
         <div id="homeList">
           <div class="widget button">
             <div class="widgetHeader">
@@ -174,6 +174,25 @@
                   </svg>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="widget" id="volumeWidget">
+            <div class="widgetHeader">
+              <div class="widgetIcon"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24.57 24.57" style="enable-background:new 0 0 24.57 24.57;"
+                  xml:space="preserve">
+                  <g>
+                    <g id="c73_volume">
+                      <path d="M9.42,7.151H4.777v10.332H9.42l8.764,6.5c0,0,1.608,1.348,1.608-0.043c0-1.396,0-22.178,0-23.449
+              			c0-1.09-1.415-0.025-1.415-0.025L9.42,7.151z" />
+                    </g>
+                    <g id="Capa_1_61_">
+                    </g>
+                  </g>
+                </svg></div>
+              <div class="widgetTitle"> Volume</div>
+            </div>
+            <div class="widgetBody">
+              <input type="range" min="0" max="100" value="50" name="" value="">
             </div>
           </div>
         </div>
@@ -266,6 +285,8 @@
 
             </div>
           </div>
+
+
           <div id="submitNewActionButton" onclick="createNewAction()"> Submit </div>
         </div>
       </div>

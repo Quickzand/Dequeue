@@ -111,13 +111,13 @@ nav {
   font-size: 500px;
   position: relative;
   transition: transform 0.25s ease-in-out;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 0;
 }
 
 .tabContainer {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   overflow: scroll;
 }
 
@@ -263,7 +263,7 @@ nav {
 }
 
 .widget.button:active {
-  filter: brightness(150%);
+  filter: brightness(50%);
 }
 
 .widget.textInput input {

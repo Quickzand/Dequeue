@@ -4,8 +4,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 50vh;
   align-content: center;
 }
+
+#home {}
 
 #homeWidget {
   display: flex;
@@ -79,4 +82,39 @@
 
 .scrollable {
   -webkit-overflow-scrolling: touch;
+}
+
+#volumeWidget .widgetBody {
+  display: grid;
+  place-items: center;
+}
+
+#volumeWidget input {
+  width: calc(100% - 4vw);
+  background: var(--secondary-bg-color);
+  outline: none;
+  -webkit-appearance: none;
+  height: 10vw;
+  border-radius: 4vw;
+  overflow: hidden;
+}
+
+#volumeWidget input::-webkit-slider-runnable-track {
+  /* background: blue; */
+}
+
+#volumeWidget input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Override default look */
+  appearance: none;
+  width: 15vw;
+  /* Set a specific slider handle width */
+  height: 10vw;
+  /* Slider handle height */
+  background: var(--main-accent-color);
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+  outline: none;
+  border: none;
 }
