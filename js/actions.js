@@ -122,6 +122,7 @@ function actionHandler(actionElement) {
     }
   } else {
     runAction(actionElement.data("scriptName"))
+    displayInfoMessage("Running action " + actionElement.data("actionName") + "...")
   }
 }
 
@@ -168,7 +169,7 @@ function exitEditMode() {
   $(".actionButton").removeClass("editMode");
 }
 
-$("*").disableSelection()
+$("*:not(input)").disableSelection()
 
 
 clearNewActionInputs();

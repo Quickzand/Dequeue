@@ -75,3 +75,20 @@ function displayErrorMessage(text) {
     $("#errorMessage").removeClass("shown")
   }, 2500)
 }
+
+function displayInfoMessage(text, time) {
+  var time = time | 2500
+  $("#notifMessage").text(text)
+  $("#notifMessage").addClass("shown")
+  setTimeout(function() {
+    $("#notifMessage").removeClass("shown")
+  }, time)
+}
+
+
+
+$(document).on('blur', 'input, textarea', function() {
+  setTimeout(function() {
+    window.scrollTo(0, 0);
+  }, 0);
+});

@@ -12,10 +12,11 @@
 }
 
 html {
-  /* overflow: visible; */
+  overflow: visible;
   /* min-height: calc(100% + env(safe-area-inset-top)); */
   /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); */
   background-attachment: fixed;
+  height: 100vh;
 }
 
 body {
@@ -28,6 +29,8 @@ body {
   /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); */
   margin: 0;
   height: 100vh;
+  -webkit-overflow-scrolling: touch !important;
+  overflow: visible !important;
   /* overflow: hidden;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -117,7 +120,7 @@ nav {
 
 .tabContainer {
   width: 100vw;
-  height: 100vh;
+  max-height: 100vh;
   overflow: scroll;
 }
 
@@ -315,5 +318,29 @@ nav {
 }
 
 #errorMessage.shown {
+  top: calc(1vh + env(safe-area-inset-top));
+}
+
+#notifMessage {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--light-bg-color);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20.0px);
+  -webkit-backdrop-filter: blur(20.0px);
+  padding: 2vw;
+  border-radius: 4vw;
+  /* width: min(auto, 80vw); */
+  text-align: center;
+  font-size: 8vw;
+  white-space: nowrap;
+  color: var(--main-txt-color);
+  top: -25vh;
+  transition: top 0.5s ease-in-out;
+}
+
+#notifMessage.shown {
   top: calc(1vh + env(safe-area-inset-top));
 }
