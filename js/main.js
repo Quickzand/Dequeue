@@ -1,7 +1,7 @@
 function activatePopupWindow() {
   $('#popUpPage').addClass("active");
   $("#pageBlackout").addClass("active")
-  bodyScrollLock.disableBodyScroll(document.getElementsByClassName("scrollable"));
+  // bodyScrollLock.disableBodyScroll(document.getElementsByClassName("scrollable"));
 }
 
 function deactivatePopupWindow() {
@@ -27,6 +27,16 @@ async function checkKey(key, callback) {
   xhttp.send();
 }
 
+
+$("input").focus(function() {
+
+  bodyScrollLock.disableBodyScroll(document.getElementsByClassName("scrollable"));
+})
+
+$("input").focusout(function() {
+  bodyScrollLock.clearAllBodyScrollLocks();
+
+})
 
 
 
