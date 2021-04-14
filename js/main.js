@@ -1,16 +1,3 @@
-function updateSettingsData(data) {
-  localStorage.setItem('settings', JSON.stringify(data))
-}
-
-function getSettingsData() {
-
-  var userData = JSON.parse(localStorage.getItem('settings'));
-  if (userData !== null) {
-    return userData;
-  }
-}
-
-
 function activatePopupWindow() {
   $('#popUpPage').addClass("active");
   $("#pageBlackout").addClass("active")
@@ -24,13 +11,16 @@ function deactivatePopupWindow() {
   // bodyScrollLock.clearAllBodyScrollLocks();
 }
 
-async function checkKey(key) {
+async function checkKey(key, callback) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       // Typical action to be performed when the document is ready:
-      if (xhttp.responseText == "API key does not exist!") console.log(false);
-      console.log(true);
+      if (xhttp.responseText.includes("API key does not exist")) {
+        callback(false, key);
+      } else {
+        callback(true, key)
+      }
     }
   };
   xhttp.open("GET", "https://itsokayboomer.com/dequeue/dequeue.php?api=" + key);
@@ -76,3 +66,12 @@ setTimeout(function() {
 // checkKey("beaned").then(res => {
 //   console.log(res)
 // })
+
+
+function displayErrorMessage(text) {
+  $("#errorMessage").text(text)
+  $("#errorMessage").addClass("shown")
+  setTimeout(function() {
+    $("#errorMessage").removeClass("shown")
+  }, 2500)
+}

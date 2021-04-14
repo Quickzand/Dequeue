@@ -162,6 +162,7 @@ function exitEditMode() {
   $(".actionButton").removeClass("editMode");
 }
 
+$("*").disableSelection()
 
 
 clearNewActionInputs();

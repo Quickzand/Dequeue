@@ -8,7 +8,7 @@
   --main-txt-color: #e5e9e9;
   --main-accent-color: #38c6cf;
   --tertiary-accent-color: #f4d753;
-  --secondary-accent-color: #eb003c;
+  --error-color: #eb003c;
 }
 
 html {
@@ -186,7 +186,7 @@ nav {
   left: 0;
   height: 90vh;
   width: 100vw;
-  background: var(--secondary-bg-color);
+  background: var(--light-bg-color);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(20.0px);
   -webkit-backdrop-filter: blur(20.0px);
@@ -292,4 +292,28 @@ nav {
 
 #pageBlackout.active {
   visibility: visible !important;
+}
+
+#errorMessage {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--light-bg-color);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20.0px);
+  -webkit-backdrop-filter: blur(20.0px);
+  padding: 2vw;
+  border-radius: 4vw;
+  /* width: min(auto, 80vw); */
+  text-align: center;
+  font-size: 8vw;
+  white-space: nowrap;
+  color: var(--error-color);
+  top: -25vh;
+  transition: top 0.5s ease-in-out;
+}
+
+#errorMessage.shown {
+  top: calc(1vh + env(safe-area-inset-top));
 }

@@ -58,6 +58,7 @@
 
 <body scroll="no">
   <div id="realBody">
+    <div id="errorMessage">Key Does Not Exist</div>
     <nav>
       <div id="background">
       </div>
@@ -187,6 +188,14 @@
       </div>
       <div class="tabContainer" id="setitngs">
         <div id="settingsList">
+          <div class="widget" id="versionNumber">
+            <div class="widgetHeader">
+              <div class="widgetTitle">Dequeue</div>
+            </div>
+            <div class="widgetBody">
+              Beta 1.0.0
+            </div>
+          </div>
           <div class="widget button" onclick="location.reload(true);">
             <div class="widgetHeader">
               <div class="widgetIcon">
@@ -213,12 +222,13 @@
               <div class="widgetTitle">Refresh</div>
             </div>
           </div>
+
           <div class="widget textInput">
             <div class="widgetHeader">
               <div class="widgetTitle">Computer Key</div>
             </div>
             <div class="widgetBody">
-              <input type="text" name="" placeholder="1111">
+              <input type="text" name="" id="apiKeyInput" placeholder="1111">
             </div>
           </div>
         </div>

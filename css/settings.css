@@ -6,3 +6,19 @@
   align-content: center;
   width: 100%;
 }
+
+#apiKeyInput:focus:not(.invalid) {
+  outline: 1vw solid var(--main-accent-color) !important;
+}
+
+#apiKeyInput.invalid {
+  outline: 1vw solid red;
+}
+
+#versionNumber .widgetBody {
+  display: grid;
+  place-items: center;
+  font-size: 8vw;
+  padding-bottom: 2vw;
+  font-weight: 300;
+}
