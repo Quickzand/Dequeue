@@ -59,9 +59,6 @@ async def read_stream_into_buffer(stream_ref, buffer):
     readable_stream = await stream_ref.open_read_async()
     readable_stream.read_async(buffer, buffer.capacity, InputStreamOptions.READ_AHEAD)
 
-#current_media_info = asyncio.run(get_media_info())
-#print(current_media_info)
-
 while True:
     try:
         r = requests.get("https://itsokayboomer.com/dequeue/dequeue.php?api="+key+"&param=command")
