@@ -1,11 +1,12 @@
 #actionsList {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 30vw;
-  grid-row-gap: 5vw;
-  grid-column-gap: 5vw;
+  grid-template-rows: min(30vw, 300px);
+  grid-row-gap: min(5vw, 50px);
+  grid-column-gap: min(5vw, 50px);
   grid-auto-flow: row;
   width: 90vw;
+  place-items: center;
   padding-left: 0.5vw;
   padding-right: 0.5vw;
   padding-top: 5vw;
@@ -13,12 +14,12 @@
 
 .actionButton {
   /* overflow: hidden; */
-  width: 45vw;
-  height: 30vw;
+  width: min(45vw, 450px);
+  height: min(30vw, 300px);
   padding: 2vw;
   border-radius: 5vw;
   background: green;
-  font-size: 5vw;
+  font-size: min(5vw, 50px);
   display: grid;
   place-items: center;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -91,7 +92,7 @@
   /* border: solid var(--main-txt-color) 1vw; */
   opacity: 1;
   transition: opacity 0.5s;
-  font-size: 20vw;
+  font-size: min(20vw, 200px);
 }
 
 #addActionButton.editMode {
@@ -119,13 +120,13 @@
   background: var(--secondary-bg-color);
   width: 90%;
   padding: 2vw;
-  height: 15vw;
-  font-size: 10vw;
+  height: min(15vw, 75px);
+  font-size: min(10vw, 50px);
 }
 
 #addActionPopup input[type="color"] {
-  width: 15vw;
-  height: 15vw;
+  width: min(15vw, 75px);
+  height: min(15vw, 75px);
   float: left;
   border: none;
 }
@@ -136,12 +137,12 @@
 }
 
 #submitNewActionButton {
-  width: 60vw;
-  height: 25vw;
+  width: min(60vw, 600px);
+  height: min(25vw, 250px);
   background: var(--light-bg-color);
   display: grid;
   place-items: center;
-  font-size: 15vw;
+  font-size: min(15vw, 150px);
   border-radius: 20vw;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(20.0px);

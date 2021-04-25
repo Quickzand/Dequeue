@@ -18,7 +18,7 @@
 #versionNumber .widgetBody {
   display: grid;
   place-items: center;
-  font-size: 8vw;
+  font-size: min(8vw, 40px);
   padding-bottom: 2vw;
   font-weight: 300;
 }

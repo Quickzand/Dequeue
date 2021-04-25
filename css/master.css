@@ -56,7 +56,7 @@ nav {
   position: fixed;
   bottom: 0;
   width: 100vw;
-  height: 25vw;
+  height: min(25vw, 125px);
   z-index: 1;
 }
 
@@ -80,13 +80,13 @@ nav {
 
 .navButtonContainer>svg {
   fill: var(--main-txt-color);
-  width: 10vw;
-  height: 10vw;
+  width: min(10vw, 50px);
+  height: min(10vw, 50px);
 }
 
 .navTitle {
   text-align: center;
-  font-size: 5vw;
+  font-size: min(5vw, 25px);
 }
 
 .navButtonContainer {
@@ -109,9 +109,9 @@ nav {
 #pageBody {
   height: 100%;
   min-width: 300vw;
-  font-size: 50vw;
+  font-size: min(50vw, 250px);
   display: flex;
-  font-size: 500px;
+  /* font-size: 500px; */
   position: relative;
   transition: transform 0.25s ease-in-out;
   /* overflow: hidden; */
@@ -207,14 +207,14 @@ nav {
 #popUpHeader {
   position: relative;
   width: 100%;
-  height: 5vw;
-  margin-bottom: 3vw;
+  height: min(5vw, 25px);
+  margin-bottom: min(3vw, 15px);
 }
 
 #popUpGrabber {
   background: var(--main-txt-color);
-  width: 15vw;
-  height: 1.5vw;
+  width: min(15vw, 75px);
+  height: min(1.5vw, 7.5px);
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -225,10 +225,10 @@ nav {
 .widget {
   background: var(--secondary-bg-color);
   border-radius: 4vw;
-  margin-bottom: 5vw;
+  margin-bottom: min(5vw, 25px);
   display: flex;
   flex-direction: column;
-  font-size: 13vw;
+  font-size: min(13vw, 650x);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(20.0px);
   -webkit-backdrop-filter: blur(20.0px);
@@ -243,21 +243,21 @@ nav {
 .widgetHeader {
   display: flex;
   place-items: center;
-  font-size: 13vw;
+  font-size: min(13vw, 65px);
   width: 95vw;
   padding: 1vw;
   text-align: right;
 }
 
 .widgetIcon svg {
-  width: 13vw;
-  height: 13vw;
+  width: min(13vw, 65px);
+  height: min(13vw, 65px);
   fill: var(--main-txt-color);
 }
 
 .widgetBody {
-  font-size: 5vw;
-  padding-bottom: 10vw;
+  font-size: min(5vw, 25px);
+  padding-bottom: min(10vw, 50px);
 }
 
 .widgetIcon {
@@ -272,8 +272,8 @@ nav {
 .widget.textInput input {
   width: 80%;
   color: var(--main-txt-color);
-  height: 15vw;
-  font-size: 13vw;
+  height: min(15vw, 75px);
+  font-size: min(13vw, 65px);
   text-align: center;
   border: none;
   background: var(--secondary-bg-color);
@@ -310,10 +310,10 @@ nav {
   border-radius: 4vw;
   /* width: min(auto, 80vw); */
   text-align: center;
-  font-size: 8vw;
+  font-size: min(8vw, 80px);
   white-space: nowrap;
   color: var(--error-color);
-  top: -25vh;
+  top: -50vh;
   transition: top 0.5s ease-in-out;
 }
 
@@ -334,10 +334,10 @@ nav {
   border-radius: 4vw;
   /* width: min(auto, 80vw); */
   text-align: center;
-  font-size: 8vw;
+  font-size: min(8vw, 80px);
   white-space: nowrap;
   color: var(--main-txt-color);
-  top: -25vh;
+  top: -50vh;
   transition: top 0.5s ease-in-out;
 }
 

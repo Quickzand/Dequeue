@@ -128,7 +128,7 @@ function actionHandler(actionElement) {
 
 
 function runAction(scriptName) {
-  var key = "beaned"
+  var key = $("#apiKeyInput").val();
   console.log("Running script " + scriptName + "...")
   var xhttp = new XMLHttpRequest();
   var temp = {
