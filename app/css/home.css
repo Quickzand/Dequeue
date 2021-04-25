@@ -118,3 +118,22 @@
   outline: none;
   border: none;
 }
+
+@media only screen and (min-device-width: 900px) {
+  #musicWidget {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #songControlsContainer {
+    display: flex;
+    flex-direction: column;
+    /* place-items: start; */
+    justify-content: center;
+    width: 50%;
+  }
+
+  #widgetAlbumArtwork {
+    width: 70%;
+  }
+}
