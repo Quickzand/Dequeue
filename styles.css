@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+:root {
+  --text-color: #FFF;
+  --bg-color: #444444;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -7,6 +12,7 @@ body {
   width: 100vw;
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
+  background-color: var(--bg-color);
 }
 
 header {
@@ -16,6 +22,35 @@ header {
   clip-path: ellipse(80% 70% at 50% 30%);
   position: relative;
   overflow: hidden;
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  width: 50vw;
+  left: 50%;
+  top: 1rem;
+  font-size: 2rem;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.30);
+  border-radius: 1rem;
+  box-shadow: 8px 0 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20.0px);
+  -webkit-backdrop-filter: blur(20.0px);
+  padding: 0.5rem;
+  color: var(--text-color);
+}
+
+.navButton {
+  flex: 1 1;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.navButton:hover {
+  background-color: rgba(0, 0, 0, 0.25)
 }
 
 /* header::after {
@@ -101,11 +136,15 @@ header {
   text-align: center;
   margin-left: 1rem;
   margin-right: 1rem;
-  color: grey;
+  color: #FFF;
 }
 
 .infoBox svg {
   width: 10rem;
-  fill: grey;
+  fill: #FFF;
   margin-top: 0;
+}
+
+#tryNow {
+  background-color: #00ac44;
 }
