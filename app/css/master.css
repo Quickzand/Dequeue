@@ -344,3 +344,7 @@ nav {
 #notifMessage.shown {
   top: calc(1vh + env(safe-area-inset-top));
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
