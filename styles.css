@@ -145,15 +145,21 @@ nav {
 }
 
 .contentImg {
-  background: linear-gradient(315deg, #00f260, #0575e6);
+  background-image: linear-gradient(315deg, #00f260, #0575e6);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: grid;
-  place-items: center;
+  place-items: auto center;
   flex: 1 1;
   clip-path: ellipse(60% 70% at 30% 50%);
+  min-width: 30rem;
 }
 
 .contentImg img {
   width: 22rem;
+  /* height: 100%; */
 }
 
 .contentContainer {
@@ -162,14 +168,16 @@ nav {
   font-weight: 100;
   display: grid;
   place-items: center;
-  width: 50%;
+  /* width: 50%; */
 }
 
 .contentHeader {
   width: 100%;
   text-align: left;
   font-weight: 400;
-  font-size: 3.5rem;
+  font-size: 4rem;
+  height: 50%;
+  display: block;
 }
 
 #about {

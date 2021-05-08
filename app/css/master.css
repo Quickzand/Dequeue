@@ -49,7 +49,8 @@ body {
   background-size: cover;
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   background-position: center;
-  background-image: linear-gradient(315deg, #00f260, #0575e6);
+  background: radial-gradient(111% 111% at 74.29% -11%, #A90000 0%, #027000 100%), linear-gradient(127.43deg, #B7D500 0%, #2200AA 100%);
+  background-blend-mode: difference, normal;
 }
 
 nav {
