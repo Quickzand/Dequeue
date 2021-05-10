@@ -8,6 +8,10 @@
   align-content: center;
 }
 
+#homeList:first-child {
+  margin-top: env(safe-area-inset-top);
+}
+
 #home {}
 
 #homeWidget {

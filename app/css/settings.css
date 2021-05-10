@@ -8,6 +8,10 @@
   padding-bottom: 50vh;
 }
 
+#settingsList:first-child {
+  margin-top: env(safe-area-inset-top)
+}
+
 #apiKeyInput:focus:not(.invalid) {
   outline: 1vw solid var(--main-accent-color) !important;
 }

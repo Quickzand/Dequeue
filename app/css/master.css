@@ -19,6 +19,8 @@ html {
   /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); */
   background-attachment: fixed;
   height: 100vh;
+  /* -webkit-overscroll-behavior: contain; */
+  overscroll-behavior: contain;
 }
 
 body {
@@ -49,7 +51,7 @@ body {
   position: fixed;
   background-attachment: fixed;
   background-size: cover;
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  /* margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); */
   background-position: center;
   /* background: linear-gradient(180deg, #57C601 0%, #320049 100%), linear-gradient(121.28deg, #007762 0%, #5200FF 100%), linear-gradient(341.1deg, #FF0000 7.52%, #1700A4 77.98%), radial-gradient(49.82% 80.51% at 49.82% 50%, #820097 0%, #FF3D00 100%), radial-gradient(50% 72.12% at 50% 50%, #EB00FF 0%, #0B0037 100%); */
   /* background-blend-mode: color-dodge, overlay, difference, difference, normal; */
@@ -119,8 +121,9 @@ nav {
   display: flex;
   /* font-size: 500px; */
   position: relative;
+  /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); */
   transition: transform 0.25s ease-in-out;
-  /* overflow: hidden; */
+  /* overflow: visible; */
   padding: 0;
 }
 

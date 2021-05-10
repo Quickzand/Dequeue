@@ -7,8 +7,7 @@ function activatePopupWindow() {
 function deactivatePopupWindow() {
   $('#popUpPage').removeClass("active");
   $("#pageBlackout").removeClass("active")
-  // bodyScrollLock.enableBodyScroll(document.body);
-  // bodyScrollLock.clearAllBodyScrollLocks();
+
 }
 
 async function checkKey(key, callback) {
@@ -28,54 +27,11 @@ async function checkKey(key, callback) {
 }
 
 
-$("input").focus(function() {
-
-  bodyScrollLock.disableBodyScroll(document.getElementsByClassName("scrollable"));
-})
-
-$("input").focusout(function() {
-  bodyScrollLock.clearAllBodyScrollLocks();
-
-})
 
 
 
 
-var rightGestureListener;
-var leftGestureListener;
-var popupWindowGestureListener;
 
-// Adds swipe event listeners
-setTimeout(function() {
-  rightGestureListener = new Hammer(document.getElementById('rightSwipeDetection'))
-  leftGestureListener = new Hammer(document.getElementById('leftSwipeDetection'))
-  popupWindowGestureListener = new Hammer(document.getElementById('popUpPage'))
-  rightGestureListener.on('swipe', function(ev) {
-    if (ev.velocityX < 0) {
-      swipeRight()
-    }
-  });
-
-  leftGestureListener.on('swipe', function(ev) {
-    if (ev.velocityX > 0) {
-      swipeLeft()
-    }
-  })
-
-
-  popupWindowGestureListener.on('pan', function(ev) {
-    if (ev.direction == Hammer.DIRECTION_DOWN) {
-      deactivatePopupWindow();
-    }
-  })
-}, 200)
-
-// bodyScrollLock.disableBodyScroll(document.getElementsByClassName("scrollable"));
-
-
-// checkKey("beaned").then(res => {
-//   console.log(res)
-// })
 
 
 function displayErrorMessage(text) {
@@ -94,11 +50,3 @@ function displayInfoMessage(text, time) {
     $("#notifMessage").removeClass("shown")
   }, time)
 }
-
-
-
-$(document).on('blur', 'input, textarea', function() {
-  setTimeout(function() {
-    window.scrollTo(0, 0);
-  }, 0);
-});
