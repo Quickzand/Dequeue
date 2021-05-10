@@ -5,6 +5,7 @@
   align-items: center;
   align-content: center;
   width: 100%;
+  padding-bottom: 50vh;
 }
 
 #apiKeyInput:focus:not(.invalid) {
@@ -25,4 +26,21 @@
 
 #settings {
   /* overflow: hidden; */
+}
+
+#backgroundList .listItem div {
+  width: 20vw;
+  border-radius: 10%;
+  height: 20vw;
+  background-image: var(--preview, var(--main-bg-color));
+  background-blend-mode: var(--preview-blend-mode);
+  background-size: cover;
+  background-position: center;
+  border: solid 3px;
+  border-color: var(--main-txt-color);
+  margin-bottom: 4vw;
+}
+
+#backgroundList .listItem div.active {
+  border-color: var(--main-accent-color);
 }

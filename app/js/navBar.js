@@ -23,7 +23,6 @@ function changeTabWithoutAnimation(changeTo) {
   changeTab(changeTo)
   setTimeout(function() {
     pBody.classList.remove("notransition")
-    console.log("AM HERE")
   }, 30)
 
 }
