@@ -1,0 +1,29 @@
+ #terminalContainer {
+   width: 100vw;
+   height: 100vh;
+   -webkit-backdrop-filter: blur(20.0px);
+   backdrop-filter: blur(20.0px);
+ }
+
+ #terminalDraggingBounds {
+   position: fixed;
+   height: 100vh;
+   width: 200vw;
+   transform: translateX(100%);
+   transition: transform 0.5s ease-in-out;
+ }
+
+ #terminalDraggingBounds.active {
+   transform: translateX(0%);
+ }
+
+ #terminal {
+   width: 80vw;
+   padding-left: 10vw;
+   padding-right: 20vw;
+   background: var(--secondary-bg-color);
+   padding-top: calc(env(safe-area-inset-top) + 2.5vh);
+   border-bottom: solid var(--light-bg-color) 5vw;
+ }
+
+ .x {}

@@ -1,11 +1,13 @@
 function activatePopupWindow() {
-  $('#popUpPage').addClass("active");
+  $('#popUpDraggingBounds').addClass("active");
   $("#pageBlackout").addClass("active")
-  // bodyScrollLock.disableBodyScroll(document.getElementsByClassName("scrollable"));
+  $("#popUpPage").css({
+    top: '0px'
+  })
 }
 
 function deactivatePopupWindow() {
-  $('#popUpPage').removeClass("active");
+  $('#popUpDraggingBounds').removeClass("active");
   $("#pageBlackout").removeClass("active")
 
 }
@@ -33,7 +35,6 @@ async function checkKey(key, callback) {
 
 
 
-
 function displayErrorMessage(text) {
   $("#errorMessage").text(text)
   $("#errorMessage").addClass("shown")
@@ -50,3 +51,25 @@ function displayInfoMessage(text, time) {
     $("#notifMessage").removeClass("shown")
   }, time)
 }
+
+
+
+$("#popUpPage").draggable({
+  axis: "y",
+  containment: "parent",
+  stop: function(event, ui) {
+    console.log(ui);
+    if (ui.offset.top < 200) {
+      $("#popUpPage").css({
+        top: '0px'
+      })
+    } else {
+      deactivatePopupWindow();
+    }
+  }
+})
+
+
+$("#popUpPage input").click(function() {
+  this.focus()
+})

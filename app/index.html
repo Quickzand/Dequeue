@@ -46,13 +46,21 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/actions.css">
   <link rel="stylesheet" href="css/settings.css">
+  <link rel="stylesheet" href="css/terminal.css">
+
   <script src="libraries/body-scroll-lock-master/lib/bodyScrollLock.js"></script>
   <script src="libraries/jQuery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+  <script src="libraries/jquery.ui.touch-punch.js" type="text/javascript"></script>
   <script type="text/javascript" src="js/Hammer.js"> </script>
+  <link rel="stylesheet" href="libraries/xterm/css/xterm.css" />
+  <script src="libraries/xterm/lib/xterm.js"></script>
   <script type="text/javascript" src="js/navBar.js" async defer> </script>
   <script type="text/javascript" src="js/main.js" async defer> </script>
   <script type="text/javascript" src="js/settings.js" async defer> </script>
   <script type="text/javascript" src="js/actions.js" async defer> </script>
+  <script type="text/javascript" src="js/terminal.js" async defer> </script>
+
 
 </head>
 
@@ -112,7 +120,7 @@
     <div id="pageBody" class="notransition">
       <div class="tabContainer scrollable" id="home">
         <div id="homeList">
-          <div class="widget button">
+          <div class="widget button" onclick="openTerminal()">
             <div class="widgetHeader">
               <div class="widgetIcon">
                 <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -221,46 +229,52 @@
       </div>
     </div>
     <div id="pageBlackout" onclick="deactivatePopupWindow()"></div>
-    <div id="popUpPage">
-      <div id="popUpHeader">
-        <div id="popUpGrabber"></div>
-      </div>
-      <div id="popUpBodyContainer">
-        <div class="popUpBody" id="addActionPopup">
-          <div class="widget" id="actionName">
-            <div class="widgetHeader">
-              <div class="widgetTitle">Action Name</div>
+    <div id="popUpDraggingBounds">
+      <div id="popUpPage">
+        <div id="popUpHeader">
+          <div id="popUpGrabber"></div>
+        </div>
+        <div id="popUpBodyContainer">
+          <div class="popUpBody" id="addActionPopup">
+            <div class="widget" id="actionName">
+              <div class="widgetHeader">
+                <div class="widgetTitle">Action Name</div>
+              </div>
+              <div class="widgetBody">
+                <input type="text" name="actionName" placeholder="New Action">
+              </div>
             </div>
-            <div class="widgetBody">
-              <input type="text" name="actionName" placeholder="New Action">
+            <div class="widget" id="scriptName">
+              <div class="widgetHeader">
+                <div class="widgetTitle">Script Name</div>
+              </div>
+              <div class="widgetBody">
+                <input type="text" name="scriptName" placeholder="New Script">
+              </div>
             </div>
-          </div>
-          <div class="widget" id="scriptName">
-            <div class="widgetHeader">
-              <div class="widgetTitle">Script Name</div>
-            </div>
-            <div class="widgetBody">
-              <input type="text" name="scriptName" placeholder="New Script">
-            </div>
-          </div>
-          <div class="widget" id="actionColor">
-            <div class="widgetHeader">
-              <div class="widgetTitle">Color</div>
-            </div>
-            <div class="widgetBody">
-              <input type="color" name="actionColor">
+            <div class="widget" id="actionColor">
+              <div class="widgetHeader">
+                <div class="widgetTitle">Color</div>
+              </div>
+              <div class="widgetBody">
+                <input type="color" name="actionColor">
 
+              </div>
             </div>
+
+
+            <div id="submitNewActionButton" onclick="createNewAction()"> Submit </div>
           </div>
-
-
-          <div id="submitNewActionButton" onclick="createNewAction()"> Submit </div>
         </div>
       </div>
     </div>
   </div>
+  <div id="terminalDraggingBounds">
+    <div id="terminalContainer">
+      <div id="terminal"></div>
+    </div>
 </body>
-
+</div>
 <script>
   if ('serviceWorker' in navigator) {
     try {
