@@ -133,7 +133,11 @@ nav {
 }
 
 #tryNow {
-  background-color: #00ac44;
+  background-color: rgba(47, 167, 104, 0.5);
+}
+
+#tryNow:hover {
+  background-color: rgba(47, 167, 104, 0.7);
 }
 
 .contentArea {
@@ -142,6 +146,11 @@ nav {
   display: flex;
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .contentImg {
@@ -187,4 +196,24 @@ nav {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+#features {
+  position: relative;
+  height: 90vh;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+
+#iphoneBorder {
+  height: 90vh;
+}
+
+#featuresPhoneContainer {
+  height: inherit;
+  width: auto;
+  display: inline-block;
+  background: blue;
+  border-radius: 20%;
 }
