@@ -6,7 +6,7 @@
   <title>Dequeue Landing Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -99,10 +99,28 @@
   </div>
   <div class="contentArea" id="features">
     <div id="featuresPhoneContainer">
+      <div id="dequeueContainer">
+        <img src="images/home.png" class="dequeuePreviewImg" alt="">
+        <img src="images/actions.png" class="dequeuePreviewImg" data-aos="fade-up" data-aos-anchor="#actionsAnchor" data-aos-anchor-placement="top-top">
+      </div>
       <img src="images/iphoneBorder.png" id="iphoneBorder">
     </div>
+    <div class="phoneInfoBox" id="homeInfo1" data-aos="fade-left" data-aos-duration="1000">The home screen is the app's main interface. It acts as a launching off point for the users to work with their computers.</div>
+    <div class="phoneInfoBox" id="homeInfo2" data-aos="fade-right" data-aos-duration="1000">Widgets can be found on the home screen, allowing the user to carry out more specialized actions with custom designed interfaces.</div>
+    <div class="phoneInfoBox" id="actionsInfo1" data-aos="fade-right" data-aos-duration="1000">The actions page is all about the users automations.</div>
+    <div class="phoneInfoBox" id="actionsInfo2" data-aos="fade-right" data-aos-duration="1000">From here, the user can create their own actions and workflows.</div>
+    <div class="phoneInfoBox" id="actionsInfo3" data-aos="fade-left" data-aos-duration="1000">Carrying out those actions is as easy as a click of a button!</div>
+
+
+    <div class="aosAnchorPoint" id="homePopup1Anchor">
+    </div>
+    <div class="aosAnchorPoint" id="actionsAnchor">
+    </div>
+
   </div>
+  <!-- JS Libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- Smooth Scrolling -->
   <script type="text/javascript">
     // Select all links with hashes
@@ -140,6 +158,10 @@
           }
         }
       });
+  </script>
+  <!-- Initalize animate on scroll -->
+  <script type="text/javascript">
+    AOS.init();
   </script>
 
 

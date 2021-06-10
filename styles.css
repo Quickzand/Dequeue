@@ -2,7 +2,14 @@
 
 :root {
   --text-color: #FFF;
+  --secondary-bg-color: rgba(25, 25, 25, 0.25);
   --bg-color: #444444;
+  --light-bg-color: rgba(255, 255, 255, 0.30);
+  --inset-bg-color: rgba(15, 15, 15, 1);
+  --main-txt-color: #e5e9e9;
+  --main-accent-color: #38c6cf;
+  --tertiary-accent-color: #f4d753;
+  --error-color: #eb003c;
 }
 
 body {
@@ -195,25 +202,103 @@ a {
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 
 #features {
   position: relative;
-  height: 90vh;
+  height: 1000vh;
   padding: 0;
   display: grid;
-  place-items: center;
+  padding-top: 45vh;
+  /* place-items: center; */
 }
 
 #iphoneBorder {
   height: 90vh;
+  width: 45vh;
+  position: absolute;
+  top: 0;
+  pointer-events: none;
 }
 
 #featuresPhoneContainer {
-  height: inherit;
-  width: auto;
-  display: inline-block;
+  height: 90vh;
+  position: sticky;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 45vh;
+  display: block;
+}
+
+#dequeueContainer {
+  position: relative;
+  width: 98%;
+  height: 97%;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  overflow: hidden;
+  border-radius: 10%;
+  blend-mode: difference, normal;
+}
+
+.dequeuePreviewImg {
+  height: 100%;
+  position: absolute;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.aosAnchorPoint {
+  height: 10px;
+  width: 100%;
+  position: absolute;
+}
+
+#actionsAnchor {
+  top: 20%;
+}
+
+.phoneInfoBox {
+  position: absolute;
+  font-size: 2rem;
+  max-width: 30rem;
+  height: auto;
   background: blue;
-  border-radius: 20%;
+  top: 50px;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.30);
+  border-radius: 1rem;
+  box-shadow: 8px 0 32px 0 rgba(31, 38, 35, 0.37);
+  backdrop-filter: blur(20.0px);
+  -webkit-backdrop-filter: blur(20.0px);
+  padding: 0.5rem;
+}
+
+#homeInfo1 {
+  top: 10%;
+  transform: translateX();
+}
+
+#homeInfo2 {
+  top: 15%;
+  transform: translateX(-110%);
+}
+
+#actionsInfo1 {
+  top: 38%;
+  transform: translateX(-110%);
+}
+
+#actionsInfo2 {
+  top: 45%;
+  transform: translateX(-110%);
+}
+
+#actionsInfo3 {
+  top: 55%;
+  transform: translateX();
 }

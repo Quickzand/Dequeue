@@ -25,5 +25,3 @@
    padding-top: calc(env(safe-area-inset-top) + 2.5vh);
    border-bottom: solid var(--light-bg-color) 5vw;
  }
-
- .x {}
