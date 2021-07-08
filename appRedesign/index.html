@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dequeue</title>
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="apple-touch-icon" href="icons/apple-icon-180.png">
+  <meta name="viewport" content="initial-scale=1,  maximum-scale=1.0, viewport-fit=cover, width=device-width, user-scalable=no">
+  </meta>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  </meta>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  </meta>
+
+  <link rel="icon" type="image/png" sizes="196x196" href="icons/favicon-196.png">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+
+  <link rel="stylesheet" href="css/master.css">
+
+  <script src="libraries/jQuery.js"></script>
+  <!-- <script src="libraries/jquery.ui.touch-punch.js" type="text/javascript"></script> -->
+  <script type="text/javascript" src="js/uiBuilder.js" async defer></script>
+  <script type="text/javascript" src="js/main.js" async defer></script>
+
+</head>
+
+<body>
+  <div class="smallNavButtonGroup closed">
+    <div class="smallNavButton" onclick="toggleNavGroup()">
+      <svg width="100px" height="100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+        <g id="TheLines">
+          <path id="Rounded-Rectangle" d="M16.5 41 C11.253 41 7 45.253 7 50.5 L7 50.5 C7 55.747 11.253 60 16.5 60 L83.5 60 C88.747 60 93 55.747 93 50.5 L93 50.5 C93 45.253 88.747 41 83.5 41 Z" />
+          <path id="Rounded-Rectangle-copy-1" d="M16.5 68 C11.253 68 7 72.253 7 77.5 L7 77.5 C7 82.747 11.253 87 16.5 87 L83.5 87 C88.747 87 93 82.747 93 77.5 L93 77.5 C93 72.253 88.747 68 83.5 68 Z" />
+          <path id="Rounded-Rectangle-copy" d="M16.5 14 C11.253 14 7 18.253 7 23.5 L7 23.5 C7 28.747 11.253 33 16.5 33 L83.5 33 C88.747 33 93 28.747 93 23.5 L93 23.5 C93 18.253 88.747 14 83.5 14 Z" />
+        </g>
+      </svg>
+    </div>
+    <div class="smallNavButton">
+      <svg src="images/icons/settingsIcon.svg" alt=""> <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+          <path id="Gear"
+            d="M45.598 100 L54.402 100 C55.646 100 56.699 99.657 57.56 98.971 58.421 98.285 58.979 97.321 59.234 96.077 L61.722 85.55 C62.648 85.231 63.557 84.896 64.45 84.545 65.343 84.195 66.188 83.828 66.986 83.445 L76.22 89.091 C77.241 89.729 78.301 90 79.402 89.904 80.502 89.809 81.483 89.33 82.344 88.469 L88.517 82.344 C89.378 81.483 89.864 80.478 89.976 79.33 90.088 78.182 89.793 77.097 89.091 76.077 L83.445 66.938 C83.86 66.108 84.234 65.263 84.569 64.402 84.904 63.541 85.215 62.679 85.502 61.818 L96.124 59.282 C97.337 59.027 98.285 58.469 98.971 57.608 99.657 56.746 100 55.694 100 54.45 L100 45.789 C100 44.577 99.657 43.541 98.971 42.679 98.285 41.818 97.337 41.26 96.124 41.005 L85.598 38.469 C85.279 37.48 84.936 36.555 84.569 35.694 84.203 34.833 83.86 34.019 83.541 33.254 L89.187 23.971 C89.856 22.951 90.152 21.89 90.072 20.789 89.992 19.689 89.506 18.708 88.612 17.847 L82.344 11.675 C81.451 10.877 80.494 10.407 79.474 10.263 78.453 10.12 77.416 10.351 76.364 10.957 L66.986 16.746 C66.22 16.332 65.399 15.949 64.522 15.598 63.644 15.247 62.711 14.912 61.722 14.593 L59.234 3.923 C58.979 2.711 58.421 1.754 57.56 1.053 56.699 0.351 55.646 0 54.402 0 L45.598 0 C44.354 0 43.301 0.351 42.44 1.053 41.579 1.754 41.005 2.711 40.718 3.923 L38.23 14.498 C37.305 14.817 36.388 15.159 35.478 15.526 34.569 15.893 33.716 16.284 32.919 16.699 L23.636 10.957 C22.584 10.351 21.539 10.112 20.502 10.239 19.466 10.367 18.501 10.845 17.608 11.675 L11.388 17.847 C10.494 18.708 10 19.689 9.904 20.789 9.809 21.89 10.112 22.951 10.813 23.971 L16.411 33.254 C16.092 34.019 15.75 34.833 15.383 35.694 15.016 36.555 14.689 37.48 14.402 38.469 L3.876 41.005 C2.632 41.26 1.675 41.818 1.005 42.679 0.335 43.541 0 44.577 0 45.789 L0 54.45 C0 55.694 0.335 56.746 1.005 57.608 1.675 58.469 2.632 59.027 3.876 59.282 L14.498 61.818 C14.753 62.679 15.056 63.541 15.407 64.402 15.758 65.263 16.124 66.108 16.507 66.938 L10.909 76.077 C10.207 77.097 9.912 78.182 10.024 79.33 10.136 80.478 10.622 81.483 11.483 82.344 L17.608 88.469 C18.469 89.33 19.45 89.809 20.55 89.904 21.651 90 22.727 89.729 23.78 89.091 L32.967 83.445 C33.764 83.828 34.609 84.195 35.502 84.545 36.396 84.896 37.305 85.231 38.23 85.55 L40.718 96.077 C41.005 97.321 41.579 98.285 42.44 98.971 43.301 99.657 44.354 100 45.598 100 Z M50 66.89 C46.906 66.89 44.075 66.124 41.507 64.593 38.939 63.062 36.898 61.013 35.383 58.445 33.868 55.877 33.11 53.046 33.11 49.952 33.11 46.858 33.876 44.043 35.407 41.507 36.938 38.971 38.979 36.938 41.531 35.407 44.083 33.876 46.906 33.11 50 33.11 53.094 33.11 55.925 33.876 58.493 35.407 61.061 36.938 63.102 38.971 64.617 41.507 66.132 44.043 66.89 46.858 66.89 49.952 66.89 53.046 66.132 55.877 64.617 58.445 63.102 61.013 61.061 63.062 58.493 64.593 55.925 66.124 53.094 66.89 50 66.89 Z" />
+        </svg>
+    </div>
+    <div class="smallNavButton">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+        <path id="Ellipse"
+          d="M50 174 C22.386 174 0 149.823 0 120 0 93.12 18.186 70.827 41.994 66.689 32.114 63.351 25 54.007 25 43 25 29.193 36.193 18 50 18 63.807 18 75 29.193 75 43 75 54.007 67.886 63.351 58.006 66.689 81.814 70.827 100 93.12 100 120 100 149.823 77.614 174 50 174 Z" />
+      </svg>
+    </div>
+  </div>
+</body>
+<script>
+  if ('serviceWorker' in navigator) {
+    try {
+      navigator.serviceWorker.register('service-worker.js')
+    } catch (e) {
+      console.log("Service worker registration failed")
+    }
+  }
+</script>
+
+</html>

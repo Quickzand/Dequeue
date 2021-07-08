@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+ <g id="TheLines">
+  <path id="Rounded-Rectangle" d="M16.5 41 C11.253 41 7 45.253 7 50.5 L7 50.5 C7 55.747 11.253 60 16.5 60 L83.5 60 C88.747 60 93 55.747 93 50.5 L93 50.5 C93 45.253 88.747 41 83.5 41 Z" />
+  <path id="Rounded-Rectangle-copy-1" d="M16.5 68 C11.253 68 7 72.253 7 77.5 L7 77.5 C7 82.747 11.253 87 16.5 87 L83.5 87 C88.747 87 93 82.747 93 77.5 L93 77.5 C93 72.253 88.747 68 83.5 68 Z" />
+  <path id="Rounded-Rectangle-copy" d="M16.5 14 C11.253 14 7 18.253 7 23.5 L7 23.5 C7 28.747 11.253 33 16.5 33 L83.5 33 C88.747 33 93 28.747 93 23.5 L93 23.5 C93 18.253 88.747 14 83.5 14 Z" />
+ </g>
+</svg>

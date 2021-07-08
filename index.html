@@ -15,13 +15,14 @@
       <a href="#about">About</a>
     </div>
     <div class="navButton">
-      Features
+      <a href="#features">Features</a>
     </div>
     <div class="navButton">
-      Feedback
+      <a href="#feedback">Feedback</a>
     </div>
     <div class="navButton" id="tryNow">
-      Try Now!
+      <a href="app/index.html">Try Now!</a>
+
     </div>
   </nav>
   <header>
@@ -53,12 +54,12 @@
       		c4.679,0,8.479,3.801,8.479,8.495c0,2.489-1.1,4.672-2.795,6.228C425.152,451.098,423.174,451.993,420.977,451.993z" />
         </g>
       </svg>
-
       <div class="infoBoxHeader">Intuitive User Interface</div>
     </div>
     <div class="infoBox">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
         <g>
+
           <path
             d="m480.6,158.7c11.3,0 20.4-9.1 20.4-20.4v-106.9c0-11.3-9.1-20.4-20.4-20.4h-107.1c-11.3,0-20.4,9.1-20.4,20.4v33h-194.2v-33c0-11.3-9.1-20.4-20.4-20.4h-107.1c-11.3-7.10543e-15-20.4,9.1-20.4,20.4v106.9c0,11.3 9.1,20.4 20.4,20.4h33.1v194.6h-33.1c-11.3,0-20.4,9.1-20.4,20.4v106.9c0,11.3 9.1,20.4 20.4,20.4h107.1c11.3,0 20.4-9.1 20.4-20.4v-33h194.2v33c0,11.3 9.1,20.4 20.4,20.4h107.1c11.3,0 20.4-9.1 20.4-20.4v-106.9c0-11.3-9.1-20.4-20.4-20.4h-33.1v-194.6h33.1zm-86.7-106.9h66.2v66h-66.2v-66zm-342.1,0h66.2v66h-66.2v-66zm66.3,408.4h-66.3v-66h66.2v66zm342.2,0h-66.2v-66h66.2v66zm-53.6-106.9h-33.1c-11.3,0-20.4,9.1-20.4,20.4v33h-194.2v-33c0-11.3-9.1-20.4-20.4-20.4h-33.1v-194.6h33.1c11.3,0 20.4-9.1 20.4-20.4v-33h194.2v33c0,11.3 9.1,20.4 20.4,20.4h33.1v194.6z" />
         </g>
@@ -87,7 +88,7 @@
 
 
   <div class="contentArea" id="about">
-    <div class="contentImg"><img src="images/about.png" alt="Preview of the app"></div>
+    <div class="contentImg" data-aos="fade-right" data-aos-duration="1000"><img src="images/about.png" alt="Preview of the app"></div>
     <div class="contentContainer">
       <div>
         <div class="contentHeader">Control from anywhere, anytime.</div>
@@ -117,6 +118,26 @@
     <div class="aosAnchorPoint" id="actionsAnchor">
     </div>
 
+  </div>
+
+  <div class="contentArea" id="feedback">
+    <div id="contactInfo">
+
+      <span class="feedbackInput">
+        <input type="text" name="name" onkeyup="this.setAttribute('value', this.value);">
+        <div class="feedbackUnderline"></div>
+        <div class="label" for="name">Name</div>
+      </span>
+      <span class="feedbackInput"><input type="text" name="email" onkeyup="this.setAttribute('value', this.value);">
+        <div class="feedbackUnderline"></div>
+        <div class="label" for="email">Email</div>
+      </span>
+      <span class="feedbackInput">
+        <input type="text" name="subject" onkeyup="this.setAttribute('value', this.value);">
+        <div class="feedbackUnderline"></div>
+        <div class="label" for="subject">Subject</div>
+      </span>
+    </div>
   </div>
   <!-- JS Libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
