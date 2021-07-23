@@ -43,3 +43,11 @@ body {
 .smallNavButtonGroup.open {
   height: auto;
 }
+
+.smallNavButtonGroup.closed > .smallNavButton {
+  transform:translateY(-100%);
+}
+
+.smallNavButtonGroup > .smallNavButton {
+  transition:transform 0.2s ease-in-out;
+}
