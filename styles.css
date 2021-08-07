@@ -8,6 +8,7 @@
   --inset-bg-color: rgba(15, 15, 15, 1);
   --main-txt-color: #e5e9e9;
   --main-accent-color: #38c6cf;
+  --main-gradient: linear-gradient(-45deg, #DD52E5, #81B5F9);
   --tertiary-accent-color: #f4d753;
   --error-color: #eb003c;
 }
@@ -26,7 +27,7 @@ body {
 header {
   width: 100vw;
   height: 90vh;
-  background: linear-gradient(-45deg, #DD52E5, #81B5F9);
+  background: var(--main-gradient);
   clip-path: ellipse(80% 70% at 50% 30%);
   position: relative;
   overflow: hidden;
@@ -305,51 +306,56 @@ a {
 }
 
 #feedback input[type="text"] {
-  background: var(--inset-bg-color);
+  background-image: var(--main-gradient);
+  background-size: 0% 100%;
+  background-color: var(--inset-bg-color);
+  background-repeat: no-repeat;
+  background-position: right;
   border: none;
   color: var(--text-color);
   font-size: 4rem;
   border-radius: 1rem;
-}
-
-.feedbackInput {
-  border-radius: 1rem;
-  /* overflow: hidden; */
-  height: 4.5rem;
-  margin-top: 4rem;
-}
-
-.feedbackUnderline {
-  width: 0%;
-  height: 10px;
-  background: var(--main-accent-color);
-  transition: width 0.25s ease-in-out;
-  transform: translateY(-100%);
+  padding: 1rem;
+  transition: background-size 0.5s;
 }
 
 #feedback input[type="text"]:focus {
   border: none;
   outline: none;
+  background-position: left;
+  box-shadow: none;
+  color: var(--text-color);
+  transform: translateY(0);
+  background-size: 100% 100%;
+
 }
 
-#feedback input[type="text"]:focus+.feedbackUnderline {
-  width: 100%;
+
+.feedbackInput {
+  border-radius: 1rem;
+  /* overflow: hidden; */
+  height: 4.5rem;
+  margin-bottom: 2em;
 }
+
 
 .label {
-  transform: translateY(-110%);
+  transform: translateY(-120%);
+  padding-left: 1rem;
   pointer-events: none;
   transition: transform 0.15s ease-in-out;
+  display: block;
+
 }
 
 #feedback input[type="text"]:focus~.label {
   color: white;
-  transform: translateY(-210%);
+  transform: translateY(-235%);
 }
 
 #feedback input[value]~.label {
   color: white;
-  transform: translateY(-210%);
+  transform: translateY(-235%);
 }
 
 #feedback {
